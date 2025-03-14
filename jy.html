@@ -1,1 +1,239 @@
-1
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特別な出会い - 安室奈美惠</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B8B',
+                        secondary: '#FFB6C1',
+                        accent: '#8A2BE2',
+                        dark: '#2E2E2E',
+                        light: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif']
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+
+        // Check for dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function opensite() {
+            window.open('https://line.me/ti/p/~yourlineID', '_blank');
+        }
+    </script>
+    <style>
+        .notification-badge {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: #FF6B8B;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .notification-badge::after {
+            content: "1";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #FF3E3E;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            border: 2px solid white;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateY(-50%) scale(1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: translateY(-50%) scale(1.05);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                transform: translateY(-50%) scale(1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Dark mode adjustments */
+        .dark body {
+            background-color: #181818;
+            color: #f1f1f1;
+        }
+
+        .dark .bg-white {
+            background-color: #222222;
+        }
+
+        .dark .text-dark {
+            color: #f1f1f1;
+        }
+
+        .dark .border-gray-200 {
+            border-color: #333333;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-pink-50 dark:bg-gray-900 text-dark">
+    <!-- Notification Icon -->
+    <div class="notification-badge" onclick="opensite()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+    </div>
+
+    <!-- First Screen - Hero Section -->
+    <section class="min-h-screen flex flex-col items-center pt-10 pb-8 px-4">
+        <div class="w-full max-w-lg bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-6">
+            <div class="p-4 text-center">
+                <h1 class="text-3xl font-bold text-primary mb-2">特別な出会い</h1>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">あなたに合った素敵な出会いを</p>
+            </div>
+            <div class="px-4 pb-4">
+                <img src="https://picsum.photos/id/64/800/600" alt="安室奈美惠" class="profile-img mb-4">
+                <div class="text-center">
+                    <h2 class="text-2xl font-semibold text-primary">安室 奈美惠</h2>
+                    <p class="text-gray-600 dark:text-gray-300">24歳 • 東京都</p>
+                    <button onclick="opensite()" class="mt-4 bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transform transition hover:scale-105 w-full">
+                        今すぐメッセージを送る
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Screen - Profile Information -->
+    <section class="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-10 px-4">
+        <div class="w-full max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-6">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">プロフィール</h2>
+                
+                <div class="flex items-center mb-4">
+                    <div class="w-1/3">
+                        <span class="text-gray-500 dark:text-gray-400">名前:</span>
+                    </div>
+                    <div class="w-2/3">
+                        <span class="font-medium">安室 奈美惠</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center mb-4">
+                    <div class="w-1/3">
+                        <span class="text-gray-500 dark:text-gray-400">年齢:</span>
+                    </div>
+                    <div class="w-2/3">
+                        <span class="font-medium">24歳</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center mb-4">
+                    <div class="w-1/3">
+                        <span class="text-gray-500 dark:text-gray-400">趣味:</span>
+                    </div>
+                    <div class="w-2/3">
+                        <span class="font-medium">歌うこと、旅行、料理</span>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-primary mb-2">自己紹介</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        こんにちは！安室奈美惠です。歌うことが大好きで、カラオケではいつも盛り上げ役です。新しい場所への旅行も大好きで、特に自然の多い場所やおしゃれなカフェを探すのが趣味です。お料理も得意で、手作りのお菓子やイタリアン料理を作るのが好きです。優しくて思いやりのある方との出会いを楽しみにしています。
+                    </p>
+                </div>
+                
+                <button onclick="opensite()" class="bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full shadow-md transform transition hover:scale-105 w-full">
+                    LINEで連絡する
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Screen - Gallery and Call to Action -->
+    <section class="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-900 py-10 px-4">
+        <div class="w-full max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-6">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">写真ギャラリー</h2>
+                
+                <div class="grid grid-cols-2 gap-3 mb-6">
+                    <img src="https://picsum.photos/id/65/400/400" alt="写真1" class="rounded-lg hover:opacity-90 transition">
+                    <img src="https://picsum.photos/id/91/400/400" alt="写真2" class="rounded-lg hover:opacity-90 transition">
+                    <img src="https://picsum.photos/id/3/400/400" alt="写真3" class="rounded-lg hover:opacity-90 transition">
+                    <img src="https://picsum.photos/id/26/400/400" alt="写真4" class="rounded-lg hover:opacity-90 transition">
+                </div>
+                
+                <div class="bg-pink-50 dark:bg-gray-700 p-4 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold text-primary mb-2">あなたを待っています</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-2">
+                        真剣に素敵な出会いを探しています。一緒にカフェに行ったり、映画を見たり、お互いの趣味について話したりしませんか？
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        気軽にLINEでメッセージを送ってください。必ず返信します！
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="opensite()" class="bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-4 rounded-full shadow-md transform transition hover:scale-105">
+                        メッセージを送る
+                    </button>
+                    <button onclick="opensite()" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-full shadow-md transform transition hover:scale-105">
+                        友達になる
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full max-w-lg mx-auto text-center mt-8 pb-10">
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+                当サイトは18歳以上の方を対象としています。<br>
+                安全な出会いのために個人情報の取り扱いにはご注意ください。
+            </p>
+        </div>
+    </section>
+</body>
+</html>
